@@ -218,3 +218,14 @@ task .selected{
 }
 
 
+/* page accueil */
+.bouton-home{
+    background-color: #BBD8DC;
+    border-radius: 100%;
+    line-height: 100px;
+    text-align: center;
+    float:left;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+}

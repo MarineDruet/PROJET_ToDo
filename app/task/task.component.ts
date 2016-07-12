@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { Task } from './tache';
-import { TaskService } from './tache.service';
+import { Task } from './task';
+import { TaskService } from './task.service';
 
 @Component({
     selector: 'task',

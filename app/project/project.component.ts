@@ -17,7 +17,7 @@ export class ProjectComponent implements OnInit {
         this._projectService = projectService;
     }
 
-    @Input()
+    @Input() 
     currentProject: Project;
     active = false; // manage form display
 

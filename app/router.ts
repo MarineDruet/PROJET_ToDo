@@ -1,11 +1,12 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { TodosDetailComponent } from './todos/todos.component';
 import { AccountDetailComponent } from './account/account.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: RouterConfig = [
     {
         path: '',
-        redirectTo:'/account',
+        redirectTo:'/home',
         pathMatch: 'full'
     },
     {
@@ -15,6 +16,10 @@ export const routes: RouterConfig = [
     {
         path:'todos',
         component:TodosDetailComponent
+    },
+    {
+        path:'home',
+        component:HomeComponent
     }
 ];
 
