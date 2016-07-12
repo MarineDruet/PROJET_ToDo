@@ -6,3 +6,4 @@
 node_modules
 typings
 !systemjs.config.js
+!/js/
