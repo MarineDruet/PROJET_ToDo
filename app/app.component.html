@@ -1,17 +1,31 @@
 <header id="header" class="col-md-3">
     <h1>TodoList</h1>
-    <nav>
+    <nav *ngIf="connected">
         <ul>
             <li><a [routerLink]="['todos']">Mes todos</a></li>
             <li><a [routerLink]="['account']">Mon compte</a></li>
+            <li><a [routerLink]="['home']" (click)="connected=false">Déconnexion</a></li>            
         </ul>
     </nav>
 </header>
 <div id="page" class="col-md-9">
-    <!-- login form -->
-    <!-- <div>
-        <h1>Bonjour !</h1>
-    </div> -->
-    <router-outlet></router-outlet>
+    <h1 *ngIf="!connected" id="hello">Bonjour !</h1>
+    <!-- formulaire de connexion -->
+    <form #formLogin="ngForm" (ngSubmit)="login(formLogin.value)" *ngIf="!connected">
+        <!-- #formLogin recupere les informations du formulaire -->
+        <!-- formLogin.value recupere les donnees saisies dans le formulaire -->
+        <div>
+            <label for="pseudo">Nom d'utilisateur: </label>
+            <input id="pseudo" name="pseudo" type="text" required ngControl="pseudo" />
+        </div>
+        <div>
+            <label for="password">Mot de passe: </label>
+            <input id="password" name="password" type="password" required ngControl="password" />
+        </div>
+        <button type="submit">Connexion</button>
+    </form>  
+    <div>
+        <router-outlet></router-outlet>
+    </div>
 </div>
 

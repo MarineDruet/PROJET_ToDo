@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-
+import { AppComponent } from '../app.component';
 
 @Component({
     selector:'home',
@@ -8,6 +8,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     directives: [ROUTER_DIRECTIVES]
 })
 
-export class HomeComponent{
+export class HomeComponent implements OnInit{
+    ngOnInit(){
+    }
     
 }

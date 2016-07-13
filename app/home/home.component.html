@@ -1,13 +1,14 @@
-<h1>Bienvenue</h1>
+<h1>Bienvenue</h1 >
+<div>
+    <a [routerLink]="['../todos']">
+        <div class="bouton-home">
+            <p>Mes todos</p>
+        </div>
+    </a>
 
-<a [routerLink]="['../todos']">
-    <div class="bouton-home">
-        <p>Mes todos</p>
-    </div>
-</a>
-
-<a [routerLink]="['../account']">
-    <div class="bouton-home">
-        <p>Mon compte</p>
-    </div>
-</a>
+    <a [routerLink]="['../account']">
+        <div class="bouton-home">
+            <p>Mon compte</p>
+        </div>
+    </a>
+</div>
