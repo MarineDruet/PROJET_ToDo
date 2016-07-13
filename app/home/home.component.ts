@@ -8,8 +8,6 @@ import { AppComponent } from '../app.component';
     directives: [ROUTER_DIRECTIVES]
 })
 
-export class HomeComponent implements OnInit{
-    ngOnInit(){
-    }
+export class HomeComponent{
     
 }

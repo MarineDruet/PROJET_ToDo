@@ -19,7 +19,8 @@ import { Input } from '@angular/core';
 export class AppComponent {
     private _userService: UserService;
     private _router: Router;
-    @Input('connected') connected: boolean;
+    @Input()
+    connected: boolean;
 
     constructor(userService: UserService, router: Router){
       this._userService = userService;
@@ -33,7 +34,7 @@ export class AppComponent {
           if((formLogin.pseudo === user.pseudo) && (formLogin.password === user.password)){
             alert("Bienvenue " + formLogin.pseudo);
             this.connected = true;
-            this._router.navigate(['home']);
+            this._router.navigate(['todos']);
             }else if((formLogin.pseudo === user.pseudo) && (formLogin.password !== user.password)){
               if(formLogin.pseudo !== user.pseudo){
                 alert("Cet utilisateur n'existe pas !!!!!!");
