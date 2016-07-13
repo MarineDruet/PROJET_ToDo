@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-
+import { AppComponent } from '../app.component';
 
 @Component({
     selector:'home',
