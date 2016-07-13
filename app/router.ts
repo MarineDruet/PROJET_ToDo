@@ -2,7 +2,6 @@ import { provideRouter, RouterConfig }  from '@angular/router';
 import { TodosDetailComponent } from './todos/todos.component';
 import { AccountDetailComponent } from './account/account.component';
 import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
 
 export const routes: RouterConfig = [
     {

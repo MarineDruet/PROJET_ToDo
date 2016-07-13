@@ -26,14 +26,16 @@ export class AppComponent {
       this._userService = userService;
       this._router = router;
     }
-
+/* permet de se connecter en recuperant les infos saisies dans le formulaire */
     login(formLogin: User){
+      /* recupere les differents Users dans la variable pseudotemp */
       let pseudotemp:any = this._userService.getUsers();
-      console.log(pseudotemp);
+          /* parcours des Users pour touver l'utilisateur en cours */
         for(let user of pseudotemp){
           if((formLogin.pseudo === user.pseudo) && (formLogin.password === user.password)){
             alert("Bienvenue " + formLogin.pseudo);
             this.connected = true;
+            /* transfert vers la page todos */
             this._router.navigate(['todos']);
             }else if((formLogin.pseudo === user.pseudo) && (formLogin.password !== user.password)){
               if(formLogin.pseudo !== user.pseudo){

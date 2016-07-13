@@ -1,9 +1,8 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { APP_ROUTER_PROVIDERS } from './router';
 import { AppComponent } from './app.component';
-import { GlobalsService } from './globals';
 
-bootstrap(AppComponent, [APP_ROUTER_PROVIDERS, GlobalsService]).catch(err => console.error(err));
+bootstrap(AppComponent, [APP_ROUTER_PROVIDERS]).catch(err => console.error(err));
 
 
 /*
