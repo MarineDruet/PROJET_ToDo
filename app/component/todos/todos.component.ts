@@ -6,6 +6,7 @@ import { ProjectService } from '../project/project.service';
 @Component({
     selector: 'todos',
     templateUrl: 'app/component/todos/todos.component.html',
+    styleUrls: ['app/component/todos/todos.component.css'],
     directives : [ ProjectComponent ],
     providers: [ ProjectService ]
 })

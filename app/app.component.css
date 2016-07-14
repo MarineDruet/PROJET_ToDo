@@ -1,12 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 13 juil. 2016, 19:08:31
-    Author     : marine
-*/
+
 .container{
     min-height: 100vh;
     width: 100%;
@@ -31,6 +23,33 @@ and open the template in the editor.
 #header img{
     max-width: 140px;
     margin-top: 30px;
+}
+
+#header nav{
+    background: none;
+    box-shadow: none;
+    height: auto;
+    line-height: normal;
+    text-align: left;
+    max-width: 140px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header nav ul li{
+    float: none;
+}
+
+#header nav ul a{
+    font-family: 'clementepdagbook';
+    background: none;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+#header nav ul a:hover{
+    color: #37474f;
 }
 
 #contenu{
