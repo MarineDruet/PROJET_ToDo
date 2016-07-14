@@ -5,7 +5,7 @@ import { ProjectService } from '../project/project.service';
 
 @Component({
     selector: 'todos',
-    templateUrl: 'app/todos/todos.component.html',
+    templateUrl: 'app/component/todos/todos.component.html',
     directives : [ ProjectComponent ],
     providers: [ ProjectService ]
 })

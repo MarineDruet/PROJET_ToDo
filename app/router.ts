@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
-import { TodosDetailComponent } from './todos/todos.component';
-import { AccountDetailComponent } from './account/account.component';
-import { HomeComponent } from './home/home.component';
+import { TodosDetailComponent } from './component/todos/todos.component';
+import { AccountDetailComponent } from './component/account/account.component';
+import { HomeComponent } from './component/home/home.component';
 
 export const routes: RouterConfig = [
     {

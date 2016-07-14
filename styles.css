@@ -1,3 +1,28 @@
+@font-face {
+    font-family: 'bringshootregular';
+    src: url('fonts/bringshoot-webfont.eot');
+    src: url('fonts/bringshoot-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/bringshoot-webfont.woff2') format('woff2'),
+        url('fonts/bringshoot-webfont.woff') format('woff'),
+        url('fonts/bringshoot-webfont.ttf') format('truetype'),
+        url('fonts/bringshoot-webfont.svg#bringshootregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clementepdagbook';
+    src: url('fonts/clementepdag-book-webfont.eot');
+    src: url('fonts/clementepdag-book-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/clementepdag-book-webfont.woff2') format('woff2'),
+        url('fonts/clementepdag-book-webfont.woff') format('woff'),
+        url('fonts/clementepdag-book-webfont.ttf') format('truetype'),
+        url('fonts/clementepdag-book-webfont.svg#clementepdagbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* Master Styles */
 h1 {
     color: #369;
@@ -9,12 +34,19 @@ h2, h3 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
 }
-body {
-    margin: 2em;
+
+html{
+    height:100%;
 }
+
+body{
+    min-height: 100vh;
+    position:relative;
+}
+
 body, input[text], button {
     color: #888;
-    font-family: Cambria, Georgia;
+    font-family: 'clementepdagbook';
 }
 a {
     cursor: pointer;
@@ -148,84 +180,3 @@ Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */
 
-
-/* header (barre latérale gauche)*/
-#header{
-    background-color: #d0ece7;
-    min-height: 600px;
-}
-
-#header h1{
-    color: #45b39d;
-    text-align: center;
-}
-
-/* zone principale (à droite du menu)*/
-
-#page{
-    background-color: #fbfcfc;
-    min-height: 600px;
-}
-
-/* page Todos */
-todos h1{
-    text-align: center;
-    color: #45b39d;
-}
-todos div.center{
-    text-align: center;
-}
-
-/* listes */
-project .formulaire{
-    margin-top: 10px;
-}
-
-
-
-.header-liste h2{
-    text-align: center;
-    font-size: 16px;
-    padding-top: 10px; 
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.header-liste button{
-    float: right;
-    margin-top: 4px;
-    margin-right: 4px;
-}
-
-project .contenu-liste{
-    margin: 0 auto;
-    background-color: #45b39d;
-    width: 90%;
-    border-radius: 10px;
-}
-
-/* taches */
-
-task ul li{
-    list-style-type: none;
-    width: 220px;
-    padding: 10px;
-    margin: 5px;
-}
-
-task .selected{
-    background-color: white;
-}
-
-
-/* page accueil */
-.bouton-home{
-    background-color: #BBD8DC;
-    border-radius: 100%;
-    line-height: 100px;
-    text-align: center;
-    float:left;
-    margin: 50px;
-    width: 100px;
-    height: 100px;
-}
