@@ -1,24 +1,25 @@
-<div class="row">
-    <button type="button" (click)="addProject()">Ajouter une liste</button>
+<div id="list-form" class="row">
+    <button class="btn" type="button" (click)="addProject()">Ajouter une liste</button>
     <div class="formulaire" *ngIf="active">
-        <div class="form-group">
+        <div class="input-field">
             <label for="title">Titre</label>
-            <input type="text" name="title" [(ngModel)]="currentProject.title">
+            <input type="text" id="title" name="title" [(ngModel)]="currentProject.title">
         </div>
-        <button type="button" (click)="submitProject()">Valider</button>
-        <button type="button" (click)="cancelProject()">Annuler</button>
+        <button class="list-button" type="button" (click)="submitProject()">Valider</button>
+        <button class="list-button" type="button" (click)="cancelProject()">Annuler</button>
     </div>
-    <hr>
+    <div class="divider"></div>
 </div>
 
 <!-- display all existing projects -->
-<div class="row">
-    <div class="bloc-liste col-md-4" *ngFor="let project of _listProjects">
-         <div class="contenu-liste">
-            <div class="header-liste">
-                <button type="button" (click)="delProject(project)">X</button>
+<div id="bloc-list" class="row">
+    <div class="col s12 m6 l4" *ngFor="let project of _listProjects">
+         <div class="card-panel">
+            <div class="header-list">
+                <button class="right btn-floating" (click)="delProject(project)"><i class="material-icons">delete</i></button>
                 <h2 (click)="modifyProject(project)">{{project.title}}</h2> 
             </div>
+             <!-- taches -->
         </div>
     </div>
 </div>

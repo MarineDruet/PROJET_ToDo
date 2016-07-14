@@ -31,7 +31,7 @@
     height: auto;
     line-height: normal;
     text-align: left;
-    max-width: 140px;
+    max-width: 150px;
     display:block;
     margin-left: auto;
     margin-right: auto;
@@ -52,24 +52,27 @@
     color: #37474f;
 }
 
-#contenu{
+#content{
     background-color: #fff;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-#contenu h1{
+#content h1{
     color:#7986cb;
     font-size: 5em;
     text-align: center;
     font-family: 'bringshootregular';
 }
 
-#contenu form{
-    background-color: #9fa8da;
-    border-radius: 30px;
+#content form{
+    border-radius: 20px;
+    background-color: #c5cae9;
+    margin-top: 10px;
     padding: 30px;
 }
 
-#contenu form label{
+#content form label{
     color: #37474f;
     text-align: center;
     font-size: 1.2em;
@@ -77,11 +80,11 @@
     font-family: 'clementepdagbook';
 }
 
-#contenu form button{
+#content form button{
     display:block;
     margin-left: auto;
     margin-right: auto;
-    background-color: #c5cae9;
+    background-color: #7986cb;
     color: #fff;
     font-family: 'clementepdagbook';
     font-weight: bold;
@@ -90,11 +93,16 @@
     font-size: 1.1em;
 }
 
-#contenu form input{
+#content form input{
     background-color: #fff;
-    border-radius: 10px;
+    border-bottom: 1px solid #7986cb;
+    text-align: center;
+    border-radius: 5px;
 }
 
+#content form input:hover{
+        border-bottom: 1px solid #7986cb;
+}
 
 
 @media all and (min-width:992px){
