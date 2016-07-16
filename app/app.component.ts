@@ -5,13 +5,14 @@ import { AccountDetailComponent } from './component/account/account.component';
 import { HomeComponent } from './component/home/home.component';
 import { User } from './component/user/user';
 import { UserService } from './component/user/user.service';
+import { TaskDisplayComponent } from './component/task/task.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     styleUrls: ['app/app.component.css'],
     directives: [TodosDetailComponent, AccountDetailComponent, ROUTER_DIRECTIVES],
-    precompile: [TodosDetailComponent, AccountDetailComponent, HomeComponent],
+    precompile: [TodosDetailComponent, AccountDetailComponent, HomeComponent, TaskDisplayComponent],
     providers: [UserService]
 })
 

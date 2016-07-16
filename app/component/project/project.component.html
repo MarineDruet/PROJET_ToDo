@@ -16,10 +16,12 @@
     <div class="col s12 m6 l4" *ngFor="let project of _listProjects">
          <div class="card-panel">
             <div class="header-list">
+                <a  [routerLink]="['../task']">Tâches</a>
                 <button class="right btn-floating" (click)="delProject(project)"><i class="material-icons">delete</i></button>
-                <h2 (click)="modifyProject(project)">{{project.title}}</h2> 
+                <h2 (click)="modifyTitle(project)">{{project.title}}</h2> 
             </div>
              <!-- taches -->
+             <task></task>
         </div>
     </div>
 </div>
