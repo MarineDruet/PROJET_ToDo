@@ -1,0 +1,27 @@
+<div id="list-form" class="row">
+    <button class="btn" type="button" (click)="addProject()">Ajouter une liste</button>
+    <div class="formulaire" *ngIf="active">
+        <div class="input-field">
+            <label for="title">Titre</label>
+            <input type="text" id="title" name="title" [(ngModel)]="currentProject.title">
+        </div>
+        <button class="list-button" type="button" (click)="submitProject()">Valider</button>
+        <button class="list-button" type="button" (click)="cancelProject()">Annuler</button>
+    </div>
+    <div class="divider"></div>
+</div>
+
+<!-- display all existing projects -->
+<div id="bloc-list" class="row">
+    <div class="col s12 m6 l4" *ngFor="let project of _listProjects">
+         <div class="card-panel">
+            <div class="header-list">
+                <a  [routerLink]="['../task']">Tâches</a>
+                <button class="right btn-floating" (click)="delProject(project)"><i class="material-icons">delete</i></button>
+                <h2 (click)="modifyTitle(project)">{{project.title}}</h2> 
+            </div>
+             <!-- taches -->
+             <task></task>
+        </div>
+    </div>
+</div>

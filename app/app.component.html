@@ -1,31 +1,50 @@
-<header id="header" class="col-md-3">
-    <h1>TodoList</h1>
-    <nav *ngIf="connected">
-        <ul>
-            <li><a [routerLink]="['todos']">Mes todos</a></li>
-            <li><a [routerLink]="['account']">Mon compte</a></li>
-            <li><a [routerLink]="['home']" (click)="connected=false">Déconnexion</a></li>            
-        </ul>
-    </nav>
-</header>
-<div id="page" class="col-md-9">
-    <h1 *ngIf="!connected" id="hello">Bonjour !</h1>
-    <!-- formulaire de connexion -->
-    <form #formLogin="ngForm" (ngSubmit)="login(formLogin.value)" *ngIf="!connected">
-        <!-- #formLogin recupere les informations du formulaire -->
-        <!-- formLogin.value recupere les donnees saisies dans le formulaire -->
-        <div>
-            <label for="pseudo">Nom d'utilisateur: </label>
-            <input id="pseudo" name="pseudo" type="text" required ngControl="pseudo" />
-        </div>
-        <div>
-            <label for="password">Mot de passe: </label>
-            <input id="password" name="password" type="password" required ngControl="password" />
-        </div>
-        <button type="submit">Connexion</button>
-    </form>  
-    <div>
-        <router-outlet></router-outlet>
+<div class="container">
+    <div class="row" id="page">
+
+        <!-- left section of the app - navigation -->
+        <header id="header" class="col s12 m3 l3">
+            <img class="responsive-img" alt="logo-todolist" src="../img/logo.png"/>
+            <h1 class="center-align">TodoList</h1>
+            <nav *ngIf="connected">
+                <ul>
+                    <li><a [routerLink]="['todos']">Mes todos</a></li>
+                    <li><a [routerLink]="['account']">Mon compte</a></li>
+                    <li><a [routerLink]="['home']" (click)="connected=false">Déconnexion</a></li>            
+                </ul>
+            </nav>
+        </header>
+
+        <!-- main section of the app -->
+        <main id="content" class="col s12 m9 l9">
+
+            <h1 *ngIf="!connected">Bonjour !</h1>
+
+            <!-- formulaire de connexion -->
+            <form class="col s6 offset-s3 col m6 offset-m3 col l6 offset-l3" #formLogin="ngForm" (ngSubmit)="login(formLogin.value)" *ngIf="!connected">
+                <!-- #formLogin retrieve form information -->
+                <!-- formLogin.value retrieve what the user has written in the form -->
+                <div>
+                    <label for="pseudo">Nom d'utilisateur: </label>
+                    <input id="pseudo" name="pseudo" type="text" required ngControl="pseudo" />
+                </div>
+                <div>
+                    <label for="password">Mot de passe: </label>
+                    <input id="password" name="password" type="password" required ngControl="password" />
+                </div>
+                <button type="submit" class="btn">Connexion</button>
+            </form>  
+
+            <!-- display the pages of the app -->
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+
+        </main>
     </div>
 </div>
+
+<!-- footer -->
+<footer id="footer" class="row hide-on-small-only">
+    <p>&copy; 2016</p>
+</footer>
 

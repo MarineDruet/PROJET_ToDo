@@ -1,11 +1,14 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Project } from './project';
 import { ProjectService } from './project.service';
+import { Router, RouterLink, Route, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'project',
-    templateUrl: 'app/project/project.component.html',
-    providers: [ProjectService]
+    templateUrl: 'app/component/project/project.component.html',
+    styleUrls: ['app/component/project/project.component.css'],
+    providers: [ProjectService],
+    directives: [ROUTER_DIRECTIVES]
 })
 
 export class ProjectComponent implements OnInit {
@@ -17,7 +20,7 @@ export class ProjectComponent implements OnInit {
         this._projectService = projectService;
     }
 
-    @Input() 
+    @Input()
     currentProject: Project;
     active = false; // manage form display
 
@@ -46,13 +49,13 @@ export class ProjectComponent implements OnInit {
     // if it already exists, update the project
     private submitProject() {
         let position = this._listProjects.indexOf(this.currentProject);
-        if(position === (-1)){
+        if (position === (-1)) {
             this._listProjects.push(this.currentProject);
-        } else{
+        } else {
             this._listProjects[position].title = this.currentProject.title;
         }
-        
-        setTimeout(() => this.active = false, 0);  
+
+        setTimeout(() => this.active = false, 0);
     }
 
     // to delete a project
@@ -67,8 +70,8 @@ export class ProjectComponent implements OnInit {
             }
         }
     }
-    
-    private modifyTitle(project:Project){
+
+    private modifyTitle(project: Project) {
         this.active = true;
         this.currentProject = project;
     }

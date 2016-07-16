@@ -1,0 +1,129 @@
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+}
+
+#page{
+    width:100%;
+    min-height: 100vh;
+}
+
+#header{
+    background-color: #c5cae9;
+    text-align: center;
+}
+
+#header h1{
+    color: #fff;
+    font-family: 'bringshootregular';
+    font-size: 3em;
+}
+
+#header img{
+    max-width: 140px;
+    margin-top: 30px;
+}
+
+#header nav{
+    background: none;
+    box-shadow: none;
+    height: auto;
+    line-height: normal;
+    text-align: left;
+    max-width: 150px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header nav ul li{
+    float: none;
+}
+
+#header nav ul a{
+    font-family: 'clementepdagbook';
+    background: none;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+#header nav ul a:hover{
+    color: #37474f;
+}
+
+#content{
+    background-color: #fff;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#content h1{
+    color:#7986cb;
+    font-size: 5em;
+    text-align: center;
+    font-family: 'bringshootregular';
+}
+
+#content form{
+    border-radius: 20px;
+    background-color: #c5cae9;
+    margin-top: 10px;
+    padding: 30px;
+}
+
+#content form label{
+    color: #37474f;
+    text-align: center;
+    font-size: 1.2em;
+    display: block;
+    font-family: 'clementepdagbook';
+}
+
+#content form button{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #7986cb;
+    color: #fff;
+    font-family: 'clementepdagbook';
+    font-weight: bold;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: 1.1em;
+}
+
+#content form input{
+    background-color: #fff;
+    border-bottom: 1px solid #7986cb;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#content form input:hover{
+        border-bottom: 1px solid #7986cb;
+}
+
+
+@media all and (min-width:992px){
+
+    #header img{
+        min-width:200px;
+    }
+}
+
+@media all and (min-width:600px){
+    #page{
+        display:flex;
+    }
+
+    #footer{
+        background-color: #7986cb;
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 0;
+        width: 100%;
+        color: #37474f;
+        padding-left: 20px;
+    }
+}
