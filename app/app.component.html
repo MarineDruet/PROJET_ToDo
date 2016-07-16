@@ -25,13 +25,15 @@
                 <!-- formLogin.value retrieve what the user has written in the form -->
                 <div>
                     <label for="pseudo">Nom d'utilisateur: </label>
-                    <input id="pseudo" name="pseudo" type="text" required ngControl="pseudo" />
+                    <input id="pseudo" name="pseudo" type="text" required #pseudo="ngForm" ngControl="pseudo" />
+                    <div [hidden]="pseudo.valid || pseudo.pristine">Pseudo obligatoire</div>
                 </div>
                 <div>
                     <label for="password">Mot de passe: </label>
-                    <input id="password" name="password" type="password" required ngControl="password" />
+                    <input id="password" name="password" type="password" required #password="ngForm" ngControl="password" />
+                    <div [hidden]="password.valid || password.pristine">Mot de passe incorrect</div>
                 </div>
-                <button type="submit" class="btn">Connexion</button>
+                <button type="submit" class="btn" [disabled]="!formLogin.form.valid">Connexion</button>
             </form>  
 
             <!-- display the pages of the app -->
