@@ -1,12 +1,14 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Project } from './project';
 import { ProjectService } from './project.service';
+import { Router, RouterLink, Route, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'project',
     templateUrl: 'app/component/project/project.component.html',
     styleUrls: ['app/component/project/project.component.css'],
-    providers: [ProjectService]
+    providers: [ProjectService],
+    directives: [ROUTER_DIRECTIVES]
 })
 
 export class ProjectComponent implements OnInit {
