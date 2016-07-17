@@ -45,3 +45,50 @@
 #bloc-list .header-list button{
     background-color: #7986cb;
 }
+
+#bloc-list .footer-list button{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: none;
+    box-shadow: none;
+    color: #7986cb;
+}
+
+#bloc-list .footer-list button:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+#addTaskModal{
+    background: none;
+    box-shadow: none;
+}
+
+#addTaskModal .modal-title{
+    font-family: 'clementepdagbook';
+    text-transform: uppercase;
+}
+
+#addTaskModal label{
+    font-size: 1em;
+    color:#607d8b;
+}
+
+#addTaskModal textarea{
+    margin-bottom: 10px;
+}
+
+#addTaskModal .addTaskButton{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#addTaskModal .addTaskButton .submit{
+    background-color: #7986cb;
+}
+
+#addTaskModal .addTaskButton .cancel{
+    background-color: #c5cae9;
+}

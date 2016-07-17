@@ -1,13 +1,15 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy} from '@angular/core';
+import { Router, RouterLink, Route, ROUTER_DIRECTIVES } from '@angular/router';
 import { Project } from './project';
 import { ProjectService } from './project.service';
-import { Router, RouterLink, Route, ROUTER_DIRECTIVES } from '@angular/router';
+import { Task } from '../task/task';
+import { TaskService } from '../task/task.service';
 
 @Component({
     selector: 'project',
     templateUrl: 'app/component/project/project.component.html',
     styleUrls: ['app/component/project/project.component.css'],
-    providers: [ProjectService],
+    providers: [ProjectService, TaskService],
     directives: [ROUTER_DIRECTIVES]
 })
 
@@ -15,14 +17,18 @@ export class ProjectComponent implements OnInit {
     private _listProjects: Project[];
     private _projectService: ProjectService;
     private _idNewProject: number;
+    private _listTasks : Task[];
+    private _taskService : TaskService;
 
-    constructor(projectService: ProjectService) {
+    constructor(projectService: ProjectService, taskService : TaskService) {
         this._projectService = projectService;
+        this._taskService = taskService;
     }
 
     @Input()
     currentProject: Project;
     active = false; // manage form display
+    
 
     // display existing projects
     ngOnInit() {
@@ -30,7 +36,14 @@ export class ProjectComponent implements OnInit {
             .then(projects => {
                 this._listProjects = projects;
             });
+        
+//        this._taskService.getTasks()
+//            .then(tasks => {
+//                this._listTasks = tasks;
+//            });
+        this._listTasks = this._taskService.getTasks();
     }
+    
 
     // display a form to create a new project
     private addProject() {
@@ -71,9 +84,15 @@ export class ProjectComponent implements OnInit {
         }
     }
 
+    // to change the title of a project
     private modifyTitle(project: Project) {
         this.active = true;
         this.currentProject = project;
+    }
+    
+    private addTask(project: Project){
+        this.currentProject = project;
+        
     }
 
 }

@@ -20,6 +20,10 @@ export class TaskDisplayComponent implements OnInit{
     @Input() 
     ngOnInit(){
         // display existing tasks
+//        this._taskService.getTasks()
+//            .then(tasks => {
+//                this._listTasks = tasks;
+//            });
         this._listTasks = this._taskService.getTasks();
     }
     
@@ -28,7 +32,7 @@ export class TaskDisplayComponent implements OnInit{
     }
     
     private addTask(){
-        this.currentTask = new Task(0,'',new Date(),new Date(),'','',null);
+        this.currentTask = new Task(0,'',new Date(),new Date(),'','',null,null);
     }
     
     private delTask(){

@@ -1,13 +1,13 @@
 <div id="list-form" class="row">
     <button class="btn" type="button" (click)="addProject()">Ajouter une liste</button>
-    <div class="formulaire" *ngIf="active">
+    <form class="formulaire" *ngIf="active">
         <div class="input-field">
             <label for="title">Titre</label>
             <input type="text" id="title" name="title" [(ngModel)]="currentProject.title">
         </div>
         <button class="list-button" type="button" (click)="submitProject()">Valider</button>
         <button class="list-button" type="button" (click)="cancelProject()">Annuler</button>
-    </div>
+    </form>
     <div class="divider"></div>
 </div>
 
@@ -16,12 +16,50 @@
     <div class="col s12 m6 l4" *ngFor="let project of _listProjects">
          <div class="card-panel">
             <div class="header-list">
-                <a  [routerLink]="['../task']">Tâches</a>
+                <!-- <a  [routerLink]="['../task']">Tâches</a> -->
                 <button class="right btn-floating" (click)="delProject(project)"><i class="material-icons">delete</i></button>
                 <h2 (click)="modifyTitle(project)">{{project.title}}</h2> 
             </div>
-             <!-- taches -->
-             <task></task>
+            <!-- tasks -->
+            <div *ngFor="let task of _listTasks">{{task.title}}</div>
+            <div class="footer-list">
+                <button class="btn" type="button" data-toggle="modal" data-target="#addTaskModal" (click)="addTask(project)">Ajouter une tâche</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Ajouter une tache</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label for="task-title">Titre</label>
+                    <input type="text" id="task-title" name="task-title"/>
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" name="task-description" length="250"></textarea>
+                    <label for="task-duedate">Date d'échéance</label>
+                    <input type="date" id="task-duedate" name="task-duedate"/>
+
+                    <label for="task-executant">À réaliser par</label>
+                    <div class="input-field col s12">
+                        <select class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="addTaskButton">
+                <button type="button" class="btn cancel" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn submit">Valider</button>
+            </div>
         </div>
     </div>
 </div>

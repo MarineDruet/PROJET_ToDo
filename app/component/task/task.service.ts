@@ -7,6 +7,7 @@ export class TaskService{
     constructor() { }
     
     public getTasks(){
+        //return Promise.resolve(TASKS);
         return TASKS;
     }
     

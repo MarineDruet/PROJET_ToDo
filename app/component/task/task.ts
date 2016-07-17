@@ -11,8 +11,9 @@
      state:string;
      author:string;
      executant:string;
+     idList:number;
      
-     constructor(id: number, description: string, creationDate: Date, dueDate: Date, state: string, author: string, executant: string, title?:string){
+     constructor(id: number, description: string, creationDate: Date, dueDate: Date, state: string, author: string, executant: string, idList:number, title?:string){
          this.id=id;
          this.description=description;
          this.creationDate=creationDate;
@@ -20,5 +21,6 @@
          this.state=state;
          this.author=author;
          this.executant=executant;
+         this.idList=idList;
      }
  }
