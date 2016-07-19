@@ -61,12 +61,12 @@
     color: #fff;
 }
 
-#addTaskModal{
+#addTaskModal, #detailTask{
     background: none;
     box-shadow: none;
 }
 
-#addTaskModal .modal-title{
+#addTaskModal .modal-title, #detailTask .modal-title{
     font-family: 'clementepdagbook';
     text-transform: uppercase;
 }
@@ -91,4 +91,22 @@
 
 #addTaskModal .addTaskButton .cancel{
     background-color: #c5cae9;
+}
+
+#detailTask .date-author{
+    text-align: right;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+#detailTask strong{
+    color: #c5cae9;
+}
+
+#detailTask p{
+    color:#607d8b;
+}
+
+#detailTask p.desc-task{
+    color: black;
 }

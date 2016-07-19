@@ -9,7 +9,6 @@ import { TaskService } from './task.service';
 })
 
 export class TaskDisplayComponent implements OnInit{
-    private _listTasks: Task[];
     private _taskService: TaskService;
     currentTask : Task; // selected task
     
@@ -19,11 +18,7 @@ export class TaskDisplayComponent implements OnInit{
     
     @Input() 
     ngOnInit(){
-        // display existing tasks
-        this._taskService.getTasks()
-            .then(tasks => {
-                this._listTasks = tasks;
-            });
+
     }
     
     onSelect(task: Task){
