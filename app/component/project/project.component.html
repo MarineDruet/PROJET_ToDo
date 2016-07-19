@@ -20,8 +20,34 @@
                 <button class="right btn-floating" (click)="delProject(project)"><i class="material-icons">delete</i></button>
                 <h2 (click)="modifyTitle(project)">{{project.title}}</h2> 
             </div>
+             
             <!-- tasks -->
-            <div *ngFor="let task of _listTasks">{{task.title}}</div>
+            <div *ngFor="let task of project.tasks" [class.selected]="task === currentTask" (click)="onSelectTask(task)" data-toggle="modal" data-target="#detailTask">{{task.title}}
+               
+                <!-- Modal task detail -->
+                <!-- <div class="modal fade" id="detailTask" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">{{task.title}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Créé par {{task.author}} le {{task.creationDate}}</p>
+                                <div>
+                                    <h5>Description de la tâche</h5>
+                                    <p>{{task.description}}<p>
+                                </div>
+                                <p>Doit être réalisée par {{task.executant}} pour le : {{task.dueDate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- FIN Modal task detail -->
+                
+            </div>
+            <!-- FIN tasks -->
+
             <div class="footer-list">
                 <button class="btn" type="button" data-toggle="modal" data-target="#addTaskModal" (click)="addTask(project)">Ajouter une tâche</button>
             </div>
@@ -29,7 +55,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal task form -->
 <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -63,3 +89,4 @@
         </div>
     </div>
 </div>
+

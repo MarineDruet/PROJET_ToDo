@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy} from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterLink, Route, ROUTER_DIRECTIVES } from '@angular/router';
 import { Project } from './project';
 import { ProjectService } from './project.service';
@@ -28,22 +28,49 @@ export class ProjectComponent implements OnInit {
     @Input()
     currentProject: Project;
     active = false; // manage form display
-    
+    currentTask : Task; // selected task
 
-    // display existing projects
+
+    // display existing projects with its list of tasks
     ngOnInit() {
-        this._projectService.getProjects()
+
+        // get all existing projects
+        let p1 = new Promise(() => {
+            this._projectService.getProjects()
             .then(projects => {
                 this._listProjects = projects;
+                return this._listProjects;
             });
+        });
         
-//        this._taskService.getTasks()
-//            .then(tasks => {
-//                this._listTasks = tasks;
-//            });
-        this._listTasks = this._taskService.getTasks();
+        // get all existing tasks
+        let p2 = new Promise(() =>{
+            this._taskService.getTasks()
+            .then(tasks => {
+                this._listTasks = tasks;
+                return this._listTasks;
+            });
+        });
+        
+        // display tasks in their project
+        Promise.all([p1, p2]).then(() => {
+                for(let project of this._listProjects){
+                    for(let task of this._listTasks){
+                        if (task.idList === project.id){
+                            project.tasks.push(task);
+                        }
+                    }
+                }
+            }
+        );
+        
+        
     }
-    
+
+    onSelectTask(task: Task){
+        this.currentTask = task;
+        console.log(this.currentTask);
+    }
 
     // display a form to create a new project
     private addProject() {

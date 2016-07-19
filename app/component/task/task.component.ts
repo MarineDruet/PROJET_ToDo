@@ -20,11 +20,10 @@ export class TaskDisplayComponent implements OnInit{
     @Input() 
     ngOnInit(){
         // display existing tasks
-//        this._taskService.getTasks()
-//            .then(tasks => {
-//                this._listTasks = tasks;
-//            });
-        this._listTasks = this._taskService.getTasks();
+        this._taskService.getTasks()
+            .then(tasks => {
+                this._listTasks = tasks;
+            });
     }
     
     onSelect(task: Task){

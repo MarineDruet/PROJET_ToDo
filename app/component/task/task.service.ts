@@ -7,8 +7,7 @@ export class TaskService{
     constructor() { }
     
     public getTasks(){
-        //return Promise.resolve(TASKS);
-        return TASKS;
+        return Promise.resolve(TASKS);
     }
     
     public getTask(id : number) {

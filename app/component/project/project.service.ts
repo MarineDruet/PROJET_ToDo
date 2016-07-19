@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { PROJECTS } from './project.mock';
 import { Project } from './project';
+import { Task } from '../task/task';
+import { TASKS } from '../task/task.mock';
 
 @Injectable()
 export class ProjectService {
