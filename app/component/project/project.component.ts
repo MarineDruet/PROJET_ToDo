@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, Output, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterLink, Route, ROUTER_DIRECTIVES } from '@angular/router';
 import { Project } from './project';
 import { ProjectService } from './project.service';
@@ -25,8 +25,7 @@ export class ProjectComponent implements OnInit {
         this._taskService = taskService;
     }
 
-    @Input()
-    currentProject: Project;
+    @Input() currentProject: Project;
     active = false; // manage form display
     currentTask : Task; // selected task
 
@@ -53,7 +52,8 @@ export class ProjectComponent implements OnInit {
         });
         
         // display tasks in their project
-        Promise.all(p1, p2).then(() => {
+        Promise.all(p1, p2)
+            .then(() => {
                 for(let project of this._listProjects){
                     for(let task of this._listTasks){
                         if (task.idList === project.id){
@@ -63,13 +63,17 @@ export class ProjectComponent implements OnInit {
                 }
             }
         );
-        
-        
     }
 
+    // to know which task is selected by the user
     onSelectTask(task: Task){
         this.currentTask = task;
-        console.log(this.currentTask);
+        console.log(this.currentTask); 
+    }
+    
+    // reinitialize the selected task when the user closes the modal displaying task's details
+    close(task:Task){
+        this.currentTask = undefined;
     }
 
     // display a form to create a new project
