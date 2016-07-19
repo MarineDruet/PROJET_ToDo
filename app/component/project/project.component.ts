@@ -53,7 +53,7 @@ export class ProjectComponent implements OnInit {
         });
         
         // display tasks in their project
-        Promise.all([p1, p2]).then(() => {
+        Promise.all(p1, p2).then(() => {
                 for(let project of this._listProjects){
                     for(let task of this._listTasks){
                         if (task.idList === project.id){
