@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { PROJECTS } from './project.mock';
 import { Project } from './project';
-import { Task } from '../task/task';
-import { TASKS } from '../task/task.mock';
+import { Task } from './task';
+import { TASKS } from './task.mock';
 
 @Injectable()
-export class ProjectService {
+
+export class TodosService {
     constructor() { }
 
+    // PROJECT SERVICES
     public getProjects(){
         return Promise.resolve(PROJECTS);
     }
@@ -25,6 +27,27 @@ export class ProjectService {
     }
     
     public delProject(project : Project) : boolean {
+        return false;
+    }
+    
+    // TASK SERVICES
+    public getTasks(){
+        return Promise.resolve(TASKS);
+    }
+    
+    public getTask(id : number) {
+        return Promise.resolve(TASKS.filter(task => task.id === id));
+    }
+    
+    public setTask(task : Task) : boolean {
+        return false;
+    }
+    
+    public addTask(task : Task) : boolean {
+        return false;
+    }
+    
+    public delTask(task : Task) : boolean {
         return false;
     }
 }

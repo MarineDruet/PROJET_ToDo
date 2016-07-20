@@ -2,7 +2,6 @@ import { provideRouter, RouterConfig }  from '@angular/router';
 import { TodosDetailComponent } from './component/todos/todos.component';
 import { AccountDetailComponent } from './component/account/account.component';
 import { HomeComponent } from './component/home/home.component';
-import { TaskDisplayComponent } from './component/task/task.component';
 
 export const routes: RouterConfig = [
     {
@@ -21,10 +20,6 @@ export const routes: RouterConfig = [
     {
         path:'home',
         component:HomeComponent
-    },
-    {
-        path:'task',
-        component: TaskDisplayComponent
     }
 ];
 

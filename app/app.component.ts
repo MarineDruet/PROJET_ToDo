@@ -1,18 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { ROUTER_DIRECTIVES, Route, RouterLink, Router } from '@angular/router';
 import { TodosDetailComponent } from './component/todos/todos.component';
 import { AccountDetailComponent } from './component/account/account.component';
 import { HomeComponent } from './component/home/home.component';
 import { User } from './component/user/user';
 import { UserService } from './component/user/user.service';
-import { TaskDisplayComponent } from './component/task/task.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
     styleUrls: ['app/app.component.css'],
     directives: [TodosDetailComponent, AccountDetailComponent, ROUTER_DIRECTIVES],
-    precompile: [TodosDetailComponent, AccountDetailComponent, HomeComponent, TaskDisplayComponent],
+    precompile: [TodosDetailComponent, AccountDetailComponent, HomeComponent],
     providers: [UserService]
 })
 
@@ -21,6 +20,7 @@ export class AppComponent {
     private _router: Router;
     @Input()
     connected: boolean;
+
 
     constructor(userService: UserService, router: Router) {
         this._userService = userService;

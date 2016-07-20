@@ -4,3 +4,116 @@
     text-align: center;
     font-family: 'bringshootregular';
 }
+
+#list-form .divider{
+    margin-top:10px;
+}
+
+#list-form button{
+    background-color: #e8eaf6;
+    border-radius: 5px;
+    color: #607d8b;
+    margin-right: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16);
+}
+
+#list-form button.list-button{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16);
+}
+
+#list-form .input-field label{
+    color:#607d8b;
+}
+
+#list-form .input-field input{
+    margin-left: 6%;
+    color: #7986cb;
+    border-bottom-color: #c5cae9;
+}
+
+#list-form .input-field input:focus{
+    border-bottom: 1px solid #7986cb;
+}
+
+#bloc-list .card-panel{
+    background-color: #c5cae9;
+    padding: 10px;
+}
+
+#bloc-list .header-list h2{
+    font-family: 'clementepdagbook';
+    font-size: 1.2em;
+    margin-top: 0;
+    padding-top: 8px;
+    text-align: center;
+    color: #37474f;
+}
+
+#bloc-list .header-list button{
+    background-color: #7986cb;
+}
+
+#bloc-list .footer-list button{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: none;
+    box-shadow: none;
+    color: #7986cb;
+}
+
+#bloc-list .footer-list button:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+#addTaskModal, #detailTask{
+    background: none;
+    box-shadow: none;
+}
+
+#addTaskModal .modal-title, #detailTask .modal-title{
+    font-family: 'clementepdagbook';
+    text-transform: uppercase;
+}
+
+#addTaskModal label{
+    font-size: 1em;
+    color:#607d8b;
+}
+
+#addTaskModal textarea{
+    margin-bottom: 10px;
+}
+
+#addTaskModal .addTaskButton{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#addTaskModal .addTaskButton .submit{
+    background-color: #7986cb;
+}
+
+#addTaskModal .addTaskButton .cancel{
+    background-color: #c5cae9;
+}
+
+#detailTask .date-author{
+    text-align: right;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+#detailTask strong{
+    color: #c5cae9;
+}
+
+#detailTask p{
+    color:#607d8b;
+}
+
+#detailTask p.desc-task{
+    color: black;
+}
